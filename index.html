@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matheus Lima | Portfólio 3D</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f8f9fa;
+      color: #222;
+    }
+    header {
+      background: #111;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.2em;
+    }
+    header p {
+      margin: 5px 0 0;
+      font-size: 1em;
+      color: #bbb;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 10px;
+      color: #333;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .item {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .item:hover {
+      transform: scale(1.03);
+    }
+    .item img, .item video {
+      width: 100%;
+      display: block;
+      cursor: pointer;
+    }
+    .caption {
+      padding: 10px;
+      font-weight: 500;
+    }
+    .show-more-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background: #111;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    .hidden {
+      display: none;
+    }
+    .contact {
+      background: #111;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .contact a {
+      color: #3aa0ff;
+      text-decoration: none;
+    }
+    footer {
+      background: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+    }
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Matheus Lima</h1>
+    <p>Modelador 3D de Joias • Designer Digital</p>
+  </header>
+
+  <div class="container">
+    <section>
+      <h2>Modelagens 3D</h2>
+      <div class="grid">
+        <div class="item"><img src="imagens/modelagem1.jpg" alt="Modelagem 1"><div class="caption">Modelagem 1</div></div>
+        <div class="item"><img src="imagens/modelagem2.jpg" alt="Modelagem 2"><div class="caption">Modelagem 2</div></div>
+        <div class="item"><img src="imagens/modelagem3.jpg" alt="Modelagem 3"><div class="caption">Modelagem 3</div></div>
+        <div class="item"><img src="imagens/modelagem4.jpg" alt="Modelagem 4"><div class="caption">Modelagem 4</div></div>
+      </div>
+      <button class="show-more-btn" onclick="toggleModelagens()">▼ Ver mais</button>
+      <div id="extra-modelagens" class="grid hidden">
+        <div class="item"><img src="imagens/modelagem5.jpg" alt="Modelagem 5"><div class="caption">Modelagem 5</div></div>
+        <div class="item"><img src="imagens/modelagem6.jpg" alt="Modelagem 6"><div class="caption">Modelagem 6</div></div>
+        <div class="item"><img src="imagens/modelagem7.jpg" alt="Modelagem 7"><div class="caption">Modelagem 7</div></div>
+        <div class="item"><img src="imagens/modelagem8.jpg" alt="Modelagem 8"><div class="caption">Modelagem 8</div></div>
+        <div class="item"><img src="imagens/modelagem9.jpg" alt="Modelagem 9"><div class="caption">Modelagem 9</div></div>
+        <div class="item"><img src="imagens/modelagem10.jpg" alt="Modelagem 10"><div class="caption">Modelagem 10</div></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Renderizações (Imagens)</h2>
+      <div class="grid">
+        <div class="item"><img src="imagens/render1.jpg" alt="Render 1"><div class="caption">Render 1</div></div>
+        <div class="item"><img src="imagens/render2.jpg" alt="Render 2"><div class="caption">Render 2</div></div>
+        <div class="item"><img src="imagens/render3.jpg" alt="Render 3"><div class="caption">Render 3</div></div>
+      </div>
+      <button class="show-more-btn" onclick="toggleRenderImagens()">▼ Ver mais</button>
+      <div id="extra-render-imgs" class="grid hidden">
+        <div class="item"><img src="imagens/render4.jpg" alt="Render 4"><div class="caption">Render 4</div></div>
+        <div class="item"><img src="imagens/render5.jpg" alt="Render 5"><div class="caption">Render 5</div></div>
+        <div class="item"><img src="imagens/render6.jpg" alt="Render 6"><div class="caption">Render 6</div></div>
+        <div class="item"><img src="imagens/render7.jpg" alt="Render 7"><div class="caption">Render 7</div></div>
+        <div class="item"><img src="imagens/render8.jpg" alt="Render 8"><div class="caption">Render 8</div></div>
+        <div class="item"><img src="imagens/render9.jpg" alt="Render 9"><div class="caption">Render 9</div></div>
+        <div class="item"><img src="imagens/render10.jpg" alt="Render 10"><div class="caption">Render 10</div></div>
+        <div class="item"><img src="imagens/render11.jpg" alt="Render 11"><div class="caption">Render 11</div></div>
+        <div class="item"><img src="imagens/render12.jpg" alt="Render 12"><div class="caption">Render 12</div></div>
+        <div class="item"><img src="imagens/render13.jpg" alt="Render 13"><div class="caption">Render 13</div></div>
+        <div class="item"><img src="imagens/render14.jpg" alt="Render 14"><div class="caption">Render 14</div></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Renderizações (Vídeos)</h2>
+      <div class="grid">
+        <div class="item"><video src="videos/render1.mp4" controls></video><div class="caption">Renderização em vídeo 1</div></div>
+        <div class="item"><video src="videos/render2.mp4" controls></video><div class="caption">Renderização em vídeo 2</div></div>
+        <div class="item"><video src="videos/render3.mp4" controls></video><div class="caption">Renderização em vídeo 3</div></div>
+      </div>
+    </section>
+  </div>
+
+  <div class="contact">
+    <h2>Contato</h2>
+    <p>Email: <a href="mailto:matheuslimaartes3d@gmail.com">matheuslimaartes3d@gmail.com</a></p>
+    <p>LinkedIn: <a href="#">linkedin.com/in/seuperfil</a></p>
+    <p>Assim que subir mais, eu mostro aqui.</p>
+  </div>
+
+  <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" src="" alt="preview">
+  </div>
+
+  <footer>
+    &copy; 2025 Matheus Lima — Todos os direitos reservados
+  </footer>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    document.querySelectorAll('img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.style.display = 'flex';
+      });
+    });
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      lightboxImg.src = '';
+    });
+
+    function toggleModelagens() {
+      const extra = document.getElementById('extra-modelagens');
+      extra.classList.toggle('hidden');
+    }
+
+    function toggleRenderImagens() {
+      const extra = document.getElementById('extra-render-imgs');
+      extra.classList.toggle('hidden');
+    }
+  </script>
+</body>
+</html>
