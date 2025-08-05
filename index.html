@@ -134,6 +134,68 @@
       height: 100%;
       object-fit: cover;
       border-radius: 8px;
+.carousel-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 10px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Oculta as setas se quiser em telas pequenas */
+@media (max-width: 768px) {
+  .carousel-container {
+    gap: 10px;
+    padding: 5px;
+  }
+
+  .carousel-item {
+    width: 80vw;
+  }
+
+  .carousel-button {
+    display: none;
+  }
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.carousel-button.left {
+  left: 10px;
+}
+
+.carousel-button.right {
+  right: 10px;
+}
+
   </style>
 </head>
 <body>
@@ -141,6 +203,9 @@
     <h1>Matheus Lima</h1>
     <p>Modelador 3D de Joias • Designer Digital</p>
   </header>
+
+<button class="carousel-button">‹</button>
+
 
 <div class="swiper mySwiper">
     <div class="swiper-wrapper">
@@ -261,7 +326,6 @@
   </script>
 </body>
 </html>
-
 
 
 
