@@ -134,6 +134,18 @@
       height: 100%;
       object-fit: cover;
       border-radius: 8px;
+      
+      @media (max-width: 768px) {
+  .carousel-item {
+    width: 90vw;
+    height: 180px;
+  }
+
+  .carousel-nav {
+    display: none; /* Opcional: esconder setas em telas pequenas */
+  }
+}
+
   </style>
 </head>
 <body>
@@ -261,6 +273,7 @@
   </script>
 </body>
 </html>
+
 
 
 
