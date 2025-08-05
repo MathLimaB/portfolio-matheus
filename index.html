@@ -4,12 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Matheus Lima | Portfólio 3D</title>
-  <style>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+<style>
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
       margin: 0;
-      background: #f8f9fa;
-      color: #222;
+      padding: 0;
     }
     header {
       background: #111;
@@ -32,9 +36,8 @@
       padding: 0 20px;
     }
     h2 {
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 10px;
-      color: #333;
+      text-align: center;
+      margin-top: 40px;
     }
     .grid {
       display: grid;
@@ -108,6 +111,28 @@
       max-width: 90vw;
       max-height: 90vh;
     }
+     .swiper {
+      width: 90%%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 300px;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    .swiper-slide img {
+      display: block;
+      width: 90%%;
+      height: auto;
+      border-radius: 8px;
   </style>
 </head>
 <body>
@@ -116,6 +141,31 @@
     <p>Modelador 3D de Joias • Designer Digital</p>
   </header>
 
+<div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="imagens/desenho1.jpg" alt="Imagem 1" /></div>
+      <div class="swiper-slide"><img src="imagens/desenho2.jpg" alt="Imagem 2" /></div>
+      <div class="swiper-slide"><img src="imagens/desenho3.jpg" alt="Imagem 3" /></div>
+      <div class="swiper-slide"><img src="imagens/desenho4.jpg" alt="Imagem 4" /></div>
+      <div class="swiper-slide"><img src="imagens/desenho5.jpg" alt="Imagem 5" /></div>
+      <div class="swiper-slide"><img src="imagens/desenho6.jpg" alt="Imagem 6" /></div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      loop: true,
+    });
+</script>
   <div class="container">
     <section>
       <h2>Modelagens 3D</h2>
@@ -210,5 +260,4 @@
   </script>
 </body>
 </html>
-
 
